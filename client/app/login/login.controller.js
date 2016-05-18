@@ -2,11 +2,8 @@
 (function(){
 
 class LoginComponent {
-  constructor($state) {
+  constructor() {
     this.message = 'Hello';
-    this.goToDashboard = function () {
-   		$state.go('main');
-    };
   }
 }
 

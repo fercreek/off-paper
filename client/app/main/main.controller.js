@@ -4,9 +4,8 @@
 
   class MainController {
 
-    constructor($http, $state) {
+    constructor($http) {
       this.$http = $http;
-      this.$state = $state;
       this.awesomeThings = [];
     }
 
@@ -15,10 +14,6 @@
         .then(response => {
           this.awesomeThings = response.data;
         });
-    }
-
-    goToShop() {
-      this.$state.go('shop');
     }
 
     addThing() {
