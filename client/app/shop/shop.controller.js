@@ -3,8 +3,9 @@
 
 class ShopComponent {
 
-  constructor($http) {
+  constructor($http, toaster) {
     this.$http = $http;
+    this.toaster = toaster;
     this.message = 'Hello';
     this.products = [];
   }
@@ -19,9 +20,6 @@ class ShopComponent {
 
 	saveTicket() {
 		console.log('save ticket')
-		this.products.forEach( function(element, index) {
-			// console.log(element)
-		});
 		let data = {
 			products: this.products,
 		  payment: "Cash",
@@ -29,10 +27,11 @@ class ShopComponent {
 		  amount: 22,
 		  total_amount: 24.2
 		}
-		console.log(data)
+
 		this.$http.post('/api/purchases', data)
 			.then(response => {
 				console.log(response)
+ 				this.toaster.pop('success', "Compra realizada", "");
 			});
 	}
 
