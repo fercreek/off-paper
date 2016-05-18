@@ -1,6 +1,7 @@
 'use strict';
 
 import mongoose from 'mongoose';
+import Product from '../product/product.model';
 
 var PurchaseSchema = new mongoose.Schema({
   products: [{type: mongoose.Schema.Types.ObjectId, ref: 'Product'}],
