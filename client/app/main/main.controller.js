@@ -4,9 +4,13 @@
 
   class MainController {
 
-    constructor($http) {
+    constructor($http, $state) {
       this.$http = $http;
+      this.$state = $state;
       this.awesomeThings = [];
+      this.goToShop = function () {
+        this.$state.go('shop');
+      }
     }
 
     $onInit() {
