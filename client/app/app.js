@@ -4,7 +4,7 @@ angular.module('offPaperApp', ['offPaperApp.constants', 'ngCookies', 'ngResource
     'ui.router', 'ui.bootstrap'
   ])
   .config(function($urlRouterProvider, $locationProvider) {
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/login');
 
     $locationProvider.html5Mode(true);
   });
