@@ -25,7 +25,9 @@ class ShopComponent {
 		  payment: "Cash",
 		  tax: 2.2,
 		  amount: 22,
-		  total_amount: 24.2
+		  total_amount: 24.2,
+		  created_at: new Date,
+			updated_at: new Date
 		}
 
 		this.$http.post('/api/purchases', data)

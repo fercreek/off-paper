@@ -1,19 +1,30 @@
 <header class="hero-unit" id="banner">
-  <div class="container">
-    <h1>Off-paper</h1>
-    <!-- <p class="lead">Kick-start your next web app with Angular Fullstack</p> -->
-    <!-- <img src="assets/images/yeoman.png" alt="I'm Yeoman"> -->
-  </div>
+    <div class="container">
+        <h1>Off-paper</h1>
+        <!-- <p class="lead">Kick-start your next web app with Angular Fullstack</p> -->
+        <!-- <img src="assets/images/yeoman.png" alt="I'm Yeoman"> -->
+    </div>
 </header>
-
 <div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header">Tickets:</h1>
-      <button class="btn btn-primary pull-right" ui-sref="shop">Shop</button>
-<!--       <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in $ctrl.awesomeThings">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Tickets:</h1>
+            <div class="row">
+              <button class="btn btn-primary pull-right" ui-sref="shop">Tienda</button>
+            </div>
+            <br>
+            <div class="row">
+                <div class="list-group small">
+                    <a ng-repeat="purchase in $ctrl.purchases" class="list-group-item">
+                        <span class="badge pull-right">{{purchase.created_at | date}}</span>$ {{purchase.total_amount}}
+                    </a>
+                </div>
+            </div>
+            <div class="well">Total: $<span ng-bind="$ctrl.total"></span></div>
+
+            <!--       <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in $ctrl.awesomeThings">
         <li><a href="#" uib-tooltip="{{thing.info}}">{{thing.name}}</a></li>
       </ul> -->
+        </div>
     </div>
-  </div>
 </div>

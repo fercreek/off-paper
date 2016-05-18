@@ -6,15 +6,23 @@
 
     constructor($http) {
       this.$http = $http;
-      this.awesomeThings = [];
+      this.purchases = [];
+      this.total = 0;
     }
 
     $onInit() {
-      this.$http.get('/api/things')
+      this.$http.get('/api/purchases')
         .then(response => {
-          this.awesomeThings = response.data;
+          this.purchases = response.data;
+
+          this.total = this.purchases.reduce(function (oldVal, newVal) {
+            console.log(oldVal)
+            console.log(newVal)
+            return oldVal + newVal.total_amount;
+          }, 0);
         });
     }
+
 
     addThing() {
       if (this.newThing) {
