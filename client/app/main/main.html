@@ -15,7 +15,7 @@
             <br>
             <div class="row">
                 <div class="list-group small">
-                    <a ng-repeat="purchase in $ctrl.purchases" class="list-group-item">
+                    <a ng-repeat="purchase in $ctrl.purchases" class="list-group-item" ui-sref="ticket-detail({id: purchase._id})">
                         <span class="badge pull-right">{{purchase.created_at | date}}</span>$ {{purchase.total_amount}}
                     </a>
                 </div>

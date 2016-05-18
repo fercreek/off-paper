@@ -19,7 +19,6 @@ class ShopComponent {
 	}
 
 	saveTicket() {
-		console.log('save ticket')
 		let data = {
 			products: this.products,
 		  payment: "Cash",
@@ -32,7 +31,6 @@ class ShopComponent {
 
 		this.$http.post('/api/purchases', data)
 			.then(response => {
-				console.log(response)
  				this.toaster.pop('success', "Compra realizada", "");
 			});
 	}

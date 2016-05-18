@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Informacion del ticket</h1>
+            <div class="row">
+                <button class="btn btn-primary pull-right" ui-sref="shop">Tienda</button>
+	            <a class="btn btn-default pull-right" ui-sref="main" style="margin-right: 1em;">Regresar</a>	
+            </div>
+            <br>
+            <div class="row">
+                <div class="list-group">
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">Registro</h4>
+                        <p class="list-group-item-text">{{$ctrl.purchase._id}}</p>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">Total</h4>
+                        <p class="list-group-item-text">{{$ctrl.purchase.total_amount | currency}}</p>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">Fecha de transaccion</h4>
+                        <p class="list-group-item-text">{{$ctrl.purchase.created_at}}</p>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">Forma de pago</h4>
+                        <p class="list-group-item-text">{{$ctrl.purchase.payment}}</p>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">Productos</h4>
+                        <p class="list-group-item-text" ng-repeat="prod in $ctrl.products">{{prod.name}} - {{prod.price | currency}}</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

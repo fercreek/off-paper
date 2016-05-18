@@ -16,8 +16,6 @@
           this.purchases = response.data;
 
           this.total = this.purchases.reduce(function (oldVal, newVal) {
-            console.log(oldVal)
-            console.log(newVal)
             return oldVal + newVal.total_amount;
           }, 0);
         });
